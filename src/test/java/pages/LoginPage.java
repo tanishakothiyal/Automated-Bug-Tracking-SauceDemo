@@ -33,5 +33,6 @@ public class LoginPage {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
+        
     }
 }

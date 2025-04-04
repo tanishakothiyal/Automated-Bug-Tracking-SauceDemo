@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-04T10:00:23 IST" name="Default suite" finished-at="2025-04-04T10:00:29 IST" duration-ms="5399">
+  <suite started-at="2025-04-04T20:18:19 IST" name="Default suite" finished-at="2025-04-04T20:18:25 IST" duration-ms="6259">
     <groups>
     </groups>
-    <test started-at="2025-04-04T10:00:23 IST" name="Default test" finished-at="2025-04-04T10:00:29 IST" duration-ms="5399">
-      <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@1ea9f6af]" started-at="2025-04-04T10:00:23 IST" name="setup" finished-at="2025-04-04T10:00:25 IST" duration-ms="2004" status="PASS">
+    <test started-at="2025-04-04T20:18:19 IST" name="Default test" finished-at="2025-04-04T20:18:25 IST" duration-ms="6259">
+      <class name="tests.TestAddToCart">
+        <test-method is-config="true" signature="login()[pri:0, instance:tests.TestAddToCart@50eac852]" started-at="2025-04-04T20:18:19 IST" name="login" finished-at="2025-04-04T20:18:23 IST" duration-ms="3897" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testLogin()[pri:0, instance:tests.LoginTest@1ea9f6af]" started-at="2025-04-04T10:00:25 IST" name="testLogin" finished-at="2025-04-04T10:00:29 IST" duration-ms="3213" status="PASS">
+        </test-method> <!-- login -->
+        <test-method signature="testAddToCart()[pri:0, instance:tests.TestAddToCart@50eac852]" started-at="2025-04-04T20:18:23 IST" name="testAddToCart" finished-at="2025-04-04T20:18:25 IST" duration-ms="2342" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@1ea9f6af]" started-at="2025-04-04T10:00:29 IST" name="tearDown" finished-at="2025-04-04T10:00:29 IST" duration-ms="164" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.LoginTest -->
+        </test-method> <!-- testAddToCart -->
+      </class> <!-- tests.TestAddToCart -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
