@@ -6,12 +6,16 @@ import org.openqa.selenium.WebDriver;
 public class AddToCart {
 	
 WebDriver driver;
+
+//Constructor
 public AddToCart(WebDriver driver) {
 	this.driver=driver;
 }
 		
-public void addFirstProductToCart() {
-    driver.findElement(By.cssSelector(".inventory_item button")).click();
+private By firstProductAddButton = By.cssSelector(".inventory_item button");
 
+public void addFirstProductToCart() {
+    driver.findElement(firstProductAddButton).click();
+    
 }
 }
