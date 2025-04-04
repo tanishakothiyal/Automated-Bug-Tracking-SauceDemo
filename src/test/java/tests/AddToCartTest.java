@@ -11,7 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.AddToCart;
 import pages.LoginPage;
 
-public class TestAddToCart {
+public class AddToCartTest {
 	WebDriver driver;
 	AddToCart AddToCart;
 
