@@ -13,6 +13,7 @@ This is a Maven-based automation testing framework built using **Java**, **Selen
 ## 🚀 Technologies Used
 
 - Java
+- Eclipse IDE
 - Maven
 - Selenium WebDriver
 - TestNG
@@ -28,8 +29,11 @@ This is a Maven-based automation testing framework built using **Java**, **Selen
 
 ## 🧪 How to Run the Tests
 
-```bash
-mvn clean test
+Right click on the test.java class, select TestNG and click on convert to TestNG
+
+Run it on the Eclipse IDE
+
+Check the result 
 
 👩‍💻 Author
 
