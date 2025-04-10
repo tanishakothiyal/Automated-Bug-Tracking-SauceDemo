@@ -6,34 +6,20 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     WebDriver driver;
 
-    // Constructor
+    private By usernameField = By.id("user-name");
+    private By passwordField = By.id("password");
+    private By loginButton = By.id("login-button");
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // Locators
-    By usernameField = By.id("user-name");
-    By passwordField = By.id("password");
-    By loginButton = By.id("login-button");
-
-    // Actions
-    public void enterUsername(String username) {
+    public void loginToSauceDemo(String username, String password) {
         driver.findElement(usernameField).sendKeys(username);
-    }
-
-    public void enterPassword(String password) {
         driver.findElement(passwordField).sendKeys(password);
-    }
-
-    public void clickLogin() {
         driver.findElement(loginButton).click();
     }
-
-    public void loginToSauceDemo(String username, String password) {
-        enterUsername(username);
-        enterPassword(password);
-        clickLogin();
-        
-    }
 }
+
+
 

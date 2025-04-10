@@ -1,36 +1,59 @@
 package tests;
 
-
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.Assert;
+
 import org.openqa.selenium.WebDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
 import pages.LoginPage;
+import com.saucedemo.generic.ExcelDataReader;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+import java.time.Duration;
 
 public class LoginTest {
+
     WebDriver driver;
     LoginPage loginPage;
 
-    @BeforeMethod
+    @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup(); 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
-        loginPage = new LoginPage(driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @Test
-    public void testLogin() throws InterruptedException {
-        loginPage.loginToSauceDemo("standard_user", "secret_sauce");
-        Thread.sleep(3000);
-        System.out.println("Login successful!");
+    public void testValidLogin() {
+        // Read data from Excel
+        String url = ExcelDataReader.getURL();
+        String username = ExcelDataReader.getUsername();
+        String password = ExcelDataReader.getPassword();
+
+        // Launch URL
+        driver.get(url);
+
+        // Page Object interaction
+        loginPage = new LoginPage(driver);
+        loginPage.loginToSauceDemo(username, password);
+
+        // Assertion to confirm login success
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertTrue(currentUrl.contains("inventory"), "Login failed or didn't redirect properly");
+
+        System.out.println("Logged in successfully. Current URL: " + currentUrl);
     }
 
-	@AfterMethod
+    
+
+
+	@AfterClass
     public void tearDown() {
-        driver.quit();
+            driver.quit();
+        }
     }
-}

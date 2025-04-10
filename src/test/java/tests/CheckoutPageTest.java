@@ -3,6 +3,8 @@ package tests;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
+import com.saucedemo.generic.ExcelDataReader;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -33,11 +35,10 @@ public class CheckoutPageTest {
 
     @Test
     public void testCheckoutFlow() throws InterruptedException {
-        loginPage = new LoginPage(driver);
-        loginPage.enterUsername("standard_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLogin();
-
+    	driver.get(ExcelDataReader.getURL());
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginToSauceDemo(ExcelDataReader.getUsername(), ExcelDataReader.getPassword());
+        
         addToCart = new AddToCart(driver);
         addToCart.addFirstProductToCart();
 

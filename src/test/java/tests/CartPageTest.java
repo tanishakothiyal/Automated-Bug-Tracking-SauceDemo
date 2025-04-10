@@ -2,6 +2,9 @@ package tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
+
+import com.saucedemo.generic.ExcelDataReader;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,11 +31,10 @@ public class CartPageTest {
     @Test
     public void testCartItemDisplayed() throws InterruptedException {
         // Login
-        loginPage = new LoginPage(driver);
-        loginPage.enterUsername("standard_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLogin();
-
+    	driver.get(ExcelDataReader.getURL());
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginToSauceDemo(ExcelDataReader.getUsername(), ExcelDataReader.getPassword());
+    
         // Add item to cart
         addToCart = new AddToCart(driver);
         addToCart.addFirstProductToCart();
