@@ -23,9 +23,9 @@ This is a Maven-based automation testing framework built using **Java**, **Selen
 ## ✅ Features Automated
 
 - Login functionality
-- Add to Cart (in progress)
-- Checkout process (to be added)
-- Excel-based data-driven tests (upcoming)
+- Add to Cart
+- Checkout process 
+- Excel-based data-driven tests 
 
 ## 🧪 How to Run the Tests
 
